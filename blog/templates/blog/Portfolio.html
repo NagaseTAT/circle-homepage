@@ -1,4 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
 PORTFOLIO
+{% for user in users%}
+    {{ user }}
+{% endfor %}
 {% endblock %}

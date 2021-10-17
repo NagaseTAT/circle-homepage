@@ -4,6 +4,7 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 # from .forms import PostForm
 from django.shortcuts import redirect
+from blog.models import *
 
 # Create your views here.
 
@@ -11,7 +12,8 @@ def top(request):
     return render(request, 'blog/Top.html', {})
 
 def portfolio(request):
-    return render(request, 'blog/Portfolio.html', {})
+    users = User.objects.all
+    return render(request, 'blog/Portfolio.html', {'users':users})
 
 def postsList(request):
     return render(request, 'blog/PostsList.html', {})
