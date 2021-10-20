@@ -1,4 +1,12 @@
 {% extends "blog/base.html" %}
 {% block content %}
-postsDetail
+投稿詳細
+<h3>{{post.title}}</h3>
+<small>投稿日時 : {{post.created_date}}</small><br>
+<small>最終更新 : {{post.published_date}}</small><br>
+<p>{{post.text}}</p><br>
+ {{post.author}}
+{{post.created_date}}
+{{post.published_date}}
+<a href = 'http://127.0.0.1:8000/postsList'>投稿詳細へ</a>
 {% endblock %}
