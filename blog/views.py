@@ -20,10 +20,12 @@ def portfolio(request):
     return render(request, 'blog/Portfolio.html', {'users': users, 'posts': posts, 'tags': tags})
 
 def postsList(request):
-    return render(request, 'blog/PostsList.html', {})
+    posts = Post.objects.all()
+    return render(request, 'blog/PostsList.html', {'posts':posts})
 
-def postsDetail(request):
-    return render(request, 'blog/postsDetail.html', {})
+def postsDetail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'blog/postsDetail.html', {'post':post})
 
 def activityDesc(request):
     return render(request, 'blog/ActivityDescription.html', {})
