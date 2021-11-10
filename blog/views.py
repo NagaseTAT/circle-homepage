@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.conf import settings
+# from .forms import PostForm
 from .forms import PostForm
 from . import forms
 from django.shortcuts import redirect
@@ -20,9 +23,21 @@ def portfolio(request):
     tags = Tag.objects.all
     return render(request, 'blog/Portfolio.html', {'users': users, 'posts': posts, 'tags': tags})
 
+def paginate_query(request, queryset, count):
+  paginator = Paginator(queryset, count)
+  page = request.GET.get('page')
+  try:
+    page_obj = paginator.page(page)
+  except PageNotAnInteger:
+    page_obj = paginator.page(1)
+  except EmptyPage:
+    page_obj = paginator.page(paginator.num_pages)
+  return page_obj
+
 def postsList(request):
-    posts = Post.objects.all()
-    return render(request, 'blog/PostsList.html', {'posts':posts})
+    posts = Post.objects.order_by('created_date')
+    page_obj = paginate_query(request, posts, settings.PAGE_PER_ITEM)
+    return render(request, 'blog/PostsList.html', {'page_obj': page_obj})
 
 def postsDetail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
