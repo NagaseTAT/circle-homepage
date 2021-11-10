@@ -39,7 +39,7 @@ class Post(models.Model):
 
 
 class Tag(models.Model):
-    User = models.ForeignKey(
+    user = models.ForeignKey(
         User,
         on_delete=models.CASCADE
     )

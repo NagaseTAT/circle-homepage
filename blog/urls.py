@@ -11,4 +11,8 @@ urlpatterns = [
     path('contactForm', views.contactForm, name='contactForm'),
     path('login', views.login, name='login'),
     path('postForm', views.postForm, name='postForm'),
+    path('adminpostsList', views.adminPostsList, name='adminPostsList'),
+    path('adminpostsregister/<int:pk>/', views.adminPostsRegister, name='adminPostsRegister'),
+    path('adminPostsDelete/<int:pk>/', views.adminPostsDelete, name='adminPostsDelete'),
+
 ]

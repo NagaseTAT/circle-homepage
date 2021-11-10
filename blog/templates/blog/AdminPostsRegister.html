@@ -1,11 +1,10 @@
 {% extends "blog/base.html" %}
 {% block content %}
-POST FORM
-    <form action = "{% url 'postForm'%}" method="POST" class="postsList_form">
+POSTS LIST 投稿編集
+    <form action = "" method="POST" class="postsList_form">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">送信</button>
     </form>
-
-
 {% endblock %}
+
