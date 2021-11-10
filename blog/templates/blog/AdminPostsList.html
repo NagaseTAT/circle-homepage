@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+ADMIN POSTS LIST 投稿一覧</br>
+<p><a href = "{% url 'postForm'%}">新規投稿</a></p>
+</br>
+{% for post in posts %}
+    {{post.title}}</br>
+    {{post.created_date}}<br>
+    {{post.published_date}}<br>
+    <a href="{% url 'adminPostsRegister' post.pk %}">編集</a>
+    <a href="{% url 'adminPostsDelete' post.pk %}">削除</a>
+    </br></br>
+{% endfor %}
+{% endblock %}

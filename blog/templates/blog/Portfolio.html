@@ -1,4 +1,16 @@
 {% extends "blog/base.html" %}
 {% block content %}
-PORTFOLIO
+<p>PORTFOLIO</p>
+{% for user in users%}
+    <p>ユーザー名：{{ user }}</p>
+    {% for tag in tags %}
+        {% if tag.user_id == user.id %}
+            {% for post in posts %}
+                {% if tag.post_id == post.id %}
+                    <p>{{ post }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
 {% endblock %}
