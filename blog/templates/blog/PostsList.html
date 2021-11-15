@@ -1,9 +1,29 @@
 {% extends "blog/base.html" %}
 {% block content %}
 POSTS LIST 投稿一覧
-  {{ pages }}
-  ｛% for page in pages %｝
-  <p>｛｛ page.title ｝｝ : ｛｛ page.text ｝｝</p>
-  ｛% endfor %｝
+{% for post in page_obj %}
 
+<a href = "{% url 'postsDetail' post.id %}">{{post.title}}</a><br>
+<p>{{post.text}}</p><br>
+<p>{{post.author}}</p><br>
+<p>{{post.created_date}}</p><br>
+<p>{{post.published_date}}</p><br>
+{% endfor %}
+{{page}}
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li><a class="page-link text-primary d-inline-block" href="?page={{ page_obj.previous_page_number }}">前</a></li>
+
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <li><a class="page-link text-primary d-inline-block" href="?page={{ page_obj.next_page_number }}">次</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+</div>
 {% endblock %}
+
