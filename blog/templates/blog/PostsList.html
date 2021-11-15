@@ -1,11 +1,9 @@
 {% extends "blog/base.html" %}
 {% block content %}
 POSTS LIST 投稿一覧
-{% for post in posts %}
-<a href = "{% url 'postsDetail' post.id %}">{{post.title}}</a><br>
-    {{post.text}}<br>
-    {{post.author}}<br>
-    {{post.created_date}}<br>
-    {{post.published_date}}<br>
-{% endfor %}
+  {{ pages }}
+  ｛% for page in pages %｝
+  <p>｛｛ page.title ｝｝ : ｛｛ page.text ｝｝</p>
+  ｛% endfor %｝
+
 {% endblock %}
