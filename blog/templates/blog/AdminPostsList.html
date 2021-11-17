@@ -1,5 +1,31 @@
-{% extends "blog/base.html" %}
+{% extends "accounts/admin_base.html" %}
+{% block head %}
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+            var column = 0;
+            $(function () {
+              "use strict";
+              $('.post-check').click(function () {
+                //data-columns(post.pk)を取得
+                column=$(this).attr('data-columns')
+                console.log(column);
+              });
+            });
+
+            function delete_post(){
+                console.log(column);
+                location.href='/adminPostsDelete/' + column + '/'
+            }
+    </script>
+{% endblock %}
 {% block content %}
+<p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
+
 ADMIN POSTS LIST 投稿一覧</br>
 <p><a href = "{% url 'postForm'%}">新規投稿</a></p>
 </br>
@@ -8,7 +34,30 @@ ADMIN POSTS LIST 投稿一覧</br>
     {{post.created_date}}<br>
     {{post.published_date}}<br>
     <a href="{% url 'adminPostsRegister' post.pk %}">編集</a>
-    <a href="{% url 'adminPostsDelete' post.pk %}">削除</a>
+    <!-- ボタン -->
+    <a class="post-check" data-toggle="modal" data-target="#sampleA" data-columns="{{ post.pk }}" >削除</a>
+
+    <!-- モーダルダイアログ -->
+    <div class="modal fade" id="sampleA" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+          </div>
+          <div class="modal-body">
+          削除してもよろしいですか？
+          </div>
+
+          <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+          <button type="button" class="btn btn-primary" onclick="delete_post()">削除</button>
+          </div>
+
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div><!-- modal fade -->
+
     </br></br>
 {% endfor %}
 {% endblock %}
