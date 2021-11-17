@@ -131,5 +131,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 PAGE_PER_ITEM = 3
 
-LOGIN_REDIRECT_URL = 'blog/adminpostsList'
+LOGIN_REDIRECT_URL = 'adminPostsList'
 LOGOUT_REDIRECT_URL = 'accounts/login/'

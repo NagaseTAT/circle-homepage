@@ -12,6 +12,7 @@ from blog.models import *
 from django.template.context_processors import csrf
 from django.http import Http404
 import datetime
+from    django.contrib.auth.decorators  import  login_required
 # Create your views here.
 
 def top(request):
@@ -85,6 +86,7 @@ def postForm(request):
         params.update(csrf(request))
     return render(request, 'blog/PostForm.html', params)
 
+@login_required
 def adminPostsList(request):
     user_id = 1
     # ログインユーザの書いた投稿データのみpostsに代入
