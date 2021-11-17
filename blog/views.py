@@ -56,7 +56,7 @@ def login(request):
 
 @login_required
 def postForm(request):
-    user_id = 1
+    user_id = request.user.id
     params = {'title': '', 'on_user': user_id, 'text': '', 'tag': '', 'form': None}
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -91,7 +91,7 @@ def postForm(request):
 @login_required
 def adminPostsList(request):
     print(request.user.id)
-    user_id = 1
+    user_id = request.user.id
     # ログインユーザの書いた投稿データのみpostsに代入
     posts = Post.objects.order_by('created_date').reverse().filter(author_id=user_id)
     return render(request, 'blog/AdminPostsList.html', {'posts':posts})
