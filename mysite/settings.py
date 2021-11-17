@@ -132,4 +132,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 PAGE_PER_ITEM = 3
 
 LOGIN_REDIRECT_URL = 'adminPostsList'
-LOGOUT_REDIRECT_URL = 'accounts/login/'
+LOGOUT_REDIRECT_URL = '../login/'
