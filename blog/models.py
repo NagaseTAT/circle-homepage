@@ -36,10 +36,18 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def get_previous_by_pk(self):
+        """前のデータを取得する。"""
+        return type(self).objects.filter(pk__lt=self.pk).order_by('pk').last()
+
+    def get_next_by_pk(self):
+        """次のデータを取得する。"""
+        return type(self).objects.filter(pk__gt=self.pk).order_by('pk').first()
+
 
 
 class Tag(models.Model):
-    User = models.ForeignKey(
+    user = models.ForeignKey(
         User,
         on_delete=models.CASCADE
     )
