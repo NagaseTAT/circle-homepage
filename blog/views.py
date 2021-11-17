@@ -7,6 +7,7 @@ from django.conf import settings
 # from .forms import PostForm
 from .forms import PostForm
 from . import forms
+
 from django.shortcuts import redirect
 from blog.models import *
 from django.template.context_processors import csrf
