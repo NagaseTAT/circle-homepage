@@ -44,3 +44,95 @@ h1, h2, h3, h4 {
 .post h2 a, .post h2 a:visited {
     color: #000000;
 }
+/* ヘッダーCSS開始 */
+header li{
+    list-style: none;
+}
+header{
+    background-color: #c2c2c2;
+    height: 200px;
+    border: 2px solid #000000;
+}
+header ul{
+    margin:0 auto;
+}
+
+header li{
+    height: 55px;
+    width: 200px;
+    float: left;
+    margin: 15px 50px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+}
+header img.example1 {
+    width: 500px;
+    height: 90px;
+    padding-top: 10px;
+    }
+header:after {
+    content: "";
+	clear: both;
+	display: block;
+}
+/* ヘッダーCSS終了 */
+/* フッターCSS開始 */
+footer{
+    border-width: 1px;
+    background-color:#fff;
+}
+footer img.example1 {
+    width: 500px;
+    height: 90px;
+    padding-top: 10px;
+    }
+footer a{
+    display:flex;
+    font-size:25px;
+    padding-top:10px;
+  }
+/* フッターCSS終了 */
+main{
+    background: linear-gradient(#FFF2CC, #7FD9D2);
+    background: -moz-linear-gradient(#FFF2CC, #7FD9D2);
+    background: -webkit-linear-gradient(#FFF2CC, #7FD9D2);
+    width: 100%;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    size:70%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ /*　"ActivityDescription" 開始 */
+.gaiyou li{
+    list-style: none;
+}
+.mainimage_ActivityDescription{
+    width: 250px;
+    height: 75Spx;
+    float: right;
+    margin-bottom: 20px;
+}
+.gaiyou_ActivityDescription{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+.gaiyou:after{
+    content: "";
+	clear: both;
+	display: block;
+}
+.theme_ActivityDescription{
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    margin: 50px;
+}
+/*　"ActivityDescription" 終了 */
