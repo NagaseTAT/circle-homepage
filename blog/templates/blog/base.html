@@ -14,12 +14,12 @@
 
 <body>
     <header>
-        <img src="https://cdn.discordapp.com/attachments/903580846747971594/903581867670917140/2.png" class="example1">
+        <a href="../"><img src="https://cdn.discordapp.com/attachments/903580846747971594/903581867670917140/2.png" class="example1"></a>
         <ul>
-            <li>トップ</li>
-            <li>なんか</li>
-            <li>なんか</li>
-            <li>なんか</li>
+            <li><a href="{% url 'postsList' %}">投稿一覧</a></li>
+            <li><a href="{% url 'portfolio' %}">ポートフォリオ</a></li>
+            <li><a href="{% url 'activityDesc' %}">活動概要</a></li>
+            <li><a href="{% url 'contactForm' %}">コンタクト</a></li>
         </ul>
     </header>
     <div>
