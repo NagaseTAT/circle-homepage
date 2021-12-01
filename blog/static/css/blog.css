@@ -146,3 +146,27 @@ main{
     margin: 50px;
 }
 /*　"ActivityDescription" 終了 */
+
+/* "ポートフォリオ" */
+.box-pf{
+    width: 80%; border: solid  rgb(7, 0, 0);
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-pf{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+p-pf{
+    margin:0 auto;
+    border-style: solid;
+    border-style: 1px;
+    border-color: #000000;
+    font-size: 20px;
+
+  }
+/* "ポートフォリオ終了"*/

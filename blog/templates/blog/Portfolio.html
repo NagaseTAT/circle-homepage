@@ -1,16 +1,27 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<p>PORTFOLIO</p>
-{% for user in users%}
-    <p>ユーザー名：{{ user }}</p>
-    {% for tag in tags %}
-        {% if tag.user_id == user.id %}
-            {% for post in posts %}
-                {% if tag.post_id == post.id %}
-                    <p>{{ post }}</p>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    {% endfor %}
-{% endfor %}
+           <div class="box-pf" style="margin-top: 10px;" style="margin-bottom: 10px;">
+                <h2 class="br_" style="margin-left: 150px;">ポートフォリオ</h2>
+                {% for user in users%}
+                <div class="content">
+                    <p-pf style="margin-left: 150px;" style="margin-right: auto;" padding="10px">{{ user }}</p-pf>
+                    <ul>
+                        <div class="flex-pf">
+                            {% for tag in tags %}
+                            {% if tag.user_id == user.id %}
+                                {% for post in posts %}
+                                    {% if tag.post_id == post.id %}
+
+                                    <li style="margin-left: 70px;" style="margin-top: 20px;">{{ post }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </ul>
+
+                </div>
+                {% endfor %}
+
+            </div>
 {% endblock %}
