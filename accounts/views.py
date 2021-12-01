@@ -8,8 +8,14 @@ from django.contrib.auth import login
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
-from .forms import SignUpForm
+
+from blog.views import adminPostsList
+from .forms import SignUpForm, User
 from django.contrib.auth.decorators import login_required
+from    django.contrib.auth.decorators  import  login_required
+from django.shortcuts import render,redirect # redirectを追記
+from django.http import Http404
+
 
 
 # class SignUpView(generic.CreateView):
@@ -30,4 +36,17 @@ class SignUp(CreateView):
 
 @login_required
 def userEdit(request):
-    return render(request, 'accounts/useredit.html', {})
+    user_id = request.user.id
+    try:
+        old_user = User.objects.get(id = user_id)
+    except User.DoesNotExist:
+        raise Http404
+    if request.method == "POST":
+        old_user.username = request.POST["username"]
+        old_user.first_name = request.POST["first_name"]
+        old_user.last_name = request.POST["last_name"]
+        old_user.email = request.POST["email"]
+        old_user.save()
+        return redirect(adminPostsList)
+
+    return render(request, 'accounts/useredit.html', {"old_user":old_user})
