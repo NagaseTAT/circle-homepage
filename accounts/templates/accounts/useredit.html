@@ -14,7 +14,11 @@
                 <div class="header"><h3>ユーザー情報の変更</h3></div>
                 <form class="ui form" action="" method="POST">
                     {% csrf_token %}
-                    {{form.as_p}}
+                    <p>username<input type="username" name="username" id="username_input" value="{{ old_user.username }}"></p>
+                    <p>first name<input type="first_name" name="first_name" id="first_name_input" value="{{ old_user.first_name }}"></p>
+                    <p>last name<input type="last_name" name="last_name" id="last_name_input" value="{{ old_user.last_name }}"></p>
+                    <p>email<input type="email" name="email" id="email_input" value="{{ old_user.email }}"></p>
+
                     <button class="ui orange button" type="submit">確認</button>
                 </form>
             </div>
