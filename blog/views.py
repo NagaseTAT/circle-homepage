@@ -98,6 +98,7 @@ def adminPostsList(request):
 
 @login_required
 def adminPostsRegister(request, pk):
+
     try:
         posts = Post.objects.get(pk=pk)
     except Post.DoesNotExist:
