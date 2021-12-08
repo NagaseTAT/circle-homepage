@@ -1,4 +1,7 @@
 {% extends "blog/base.html" %}
+{% block head %}
+<title>ポートフォリオ｜福島大学プログラミングサークル</title>
+{% endblock %}
 {% block content %}
            <div class="box-pf" style="margin-top: 10px;" style="margin-bottom: 10px;">
                 <h2 class="br_" style="margin-left: 150px;">ポートフォリオ</h2>
@@ -8,14 +11,15 @@
                     <ul>
                         <div class="flex-pf">
                             {% for tag in tags %}
-                            {% if tag.user_id == user.id %}
-                                {% for post in posts %}
-                                    {% if tag.post_id == post.id %}
-
-                                    <li style="margin-left: 70px;" style="margin-top: 20px;">{{ post }}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
+                                {% if tag.user_id == user.id %}
+                                    {% for post in posts %}
+                                        {% if tag.post_id == post.id %}
+                                        <div align="center">
+                                            <li style="margin-left: 70px;" style="margin-top: 20px;">{{ post }}</li>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </ul>
