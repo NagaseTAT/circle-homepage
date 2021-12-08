@@ -216,3 +216,25 @@ p-pf{
   right: 0;
 }
 /* topページ終了 */
+
+/*　投稿詳細　*/
+.p-pd{
+    margin: auto;
+}
+
+
+.box-pd{
+    width: 80%; border: solid  rgb(7, 0, 0);
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box-pd2{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* 投稿詳細 */
