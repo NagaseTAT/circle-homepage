@@ -1,8 +1,9 @@
 {% extends "blog/base.html" %}
+{% block head %}
+<title>投稿一覧｜福島大学プログラミングサークル</title>
+{% endblock %}
 {% block content %}
-POSTS LIST 投稿一覧<br>
 {% for post in page_obj %}
-
 <a href = "{% url 'postsDetail' post.id %}">{{post.title}}</a><br>
 <p>{{post.text}}</p><br>
 <p>{{post.author}}</p><br>
