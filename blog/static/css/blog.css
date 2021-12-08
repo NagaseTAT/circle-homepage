@@ -45,9 +45,10 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 /* ヘッダーCSS開始 */
-header li{
+header .statul li{
     list-style: none;
     float: left;
+    margin-top: 20px;
     /*height: 55px;
     width: 200px;
     margin: 15px 50px;
@@ -57,7 +58,7 @@ header li{
     border: 1px solid #000000;
     text-align: center;*/
 }
-header ul a{
+header .statul a{
     text-decoration: none
     height: 55px;
     width: 200px;
@@ -71,22 +72,115 @@ header ul a{
 
 }
 header{
-    background-color: #c2c2c2;
-    height: 200px;
+    background-color: #5f9ea0;
+    height: 120px;
     border: 2px solid #000000;
 }
-header ul{
+header .statul{
     margin:0 auto;
 }
 header img.example1 {
     width: 500px;
-    height: 90px;
+    height: 110px;
     padding-top: 10px;
     }
 header:after {
     content: "";
 	clear: both;
 	display: block;
+}
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #ffffff;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #3584bb;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #3584bb;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 30px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #3584bb;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
 }
 /* ヘッダーCSS終了 */
 /* フッターCSS開始 */
@@ -128,6 +222,9 @@ main{
     height: 75Spx;
     float: right;
     margin-bottom: 20px;
+    border: 3px solid #000000;
+    margin-left: 5px;
+    border-radius: 10px;
 }
 .gaiyou_ActivityDescription{
     margin-left: auto;
@@ -143,7 +240,11 @@ main{
     font-size: 30px;
     background-color: #ffffff;
     border: 1px solid #000000;
-    margin: 50px;
+    margin-top: 20px;
+    width: 123px
+}
+.gaiyoutexts_ActivityDescription{
+    margin: 20px;
 }
 /*　"ActivityDescription" 終了 */
 
@@ -214,5 +315,9 @@ p-pf{
 
 .top-label h2:after {
   right: 0;
+}
+.top-image{
+    width: 100%;
+    height: 600px;
 }
 /* topページ終了 */
