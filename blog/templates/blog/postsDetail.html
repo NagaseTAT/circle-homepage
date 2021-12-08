@@ -4,7 +4,7 @@
 <h3>{{post.title}}</h3>
 <small>投稿日時 : {{post.created_date}}</small><br>
 <small>最終更新 : {{post.published_date}}</small><br>
-<p>{{post.text}}</p><br>
+<p>{{post.text | linebreaksbr}}</p><br>
 <p>{{post.author}}</p><br>
 <p>{{post.created_date}}</p><br>
 <p>{{post.published_date}}</p><br>
@@ -20,5 +20,5 @@
     {% endif %}
 <!--投稿詳細-->
   {% endwith %}
-<a href = 'http://127.0.0.1:8000/postsList'>投稿詳細へ</a>
+<a href = "{% url 'postsList' %}">投稿詳細へ</a>
 {% endblock %}
