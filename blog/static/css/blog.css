@@ -186,7 +186,7 @@ header:after {
 /* フッターCSS開始 */
 footer{
     border-width: 1px;
-    background-color:#fff;
+    background-color:#5f9ea0;
 }
 footer img.example1 {
     width: 500px;
@@ -246,6 +246,9 @@ main{
 .gaiyoutexts_ActivityDescription{
     margin: 20px;
 }
+.gaiyoutexts_ActivityDescription div{
+    font-size: 18;
+}
 /*　"ActivityDescription" 終了 */
 
 /* "ポートフォリオ" */
@@ -295,6 +298,7 @@ p-pf{
   position: relative;
   display: inline-block;
   padding: 0 65px;
+  margin: 0 50px;
   text-align: center;
 }
 
@@ -383,3 +387,9 @@ p{
 }
 /*投稿一覧終わり*/
 
+.wrap {
+    height: 912px;
+    width: 1368px;
+    position: absolute;
+    transform-origin: 0% 0%;
+}
