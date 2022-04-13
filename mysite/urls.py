@@ -21,5 +21,4 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-    # path('accounts/', include('allauth.urls')), #追記
 ]
