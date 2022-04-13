@@ -246,6 +246,9 @@ main{
 .gaiyoutexts_ActivityDescription{
     margin: 20px;
 }
+.gaiyoutexts_ActivityDescription div{
+    font-size: 18;
+}
 /*　"ActivityDescription" 終了 */
 
 /* "ポートフォリオ" */
