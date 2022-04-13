@@ -186,7 +186,7 @@ header:after {
 /* フッターCSS開始 */
 footer{
     border-width: 1px;
-    background-color:#5f9ea0;
+    background-color:#fff;
 }
 footer img.example1 {
     width: 500px;
@@ -246,9 +246,6 @@ main{
 .gaiyoutexts_ActivityDescription{
     margin: 20px;
 }
-.gaiyoutexts_ActivityDescription div{
-    font-size: 18;
-}
 /*　"ActivityDescription" 終了 */
 
 /* "ポートフォリオ" */
@@ -298,7 +295,6 @@ p-pf{
   position: relative;
   display: inline-block;
   padding: 0 65px;
-  margin: 0 50px;
   text-align: center;
 }
 
@@ -325,71 +321,3 @@ p-pf{
     height: 600px;
 }
 /* topページ終了 */
-
-/*　投稿詳細　*/
-.p-pd{
-    margin: auto;
-}
-
-
-.box-pd{
-    width: 80%; border: solid  rgb(7, 0, 0);
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.box-pd2{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* 投稿詳細 */
-
-/*投稿一覧*/
-h2{
-  text-align: left;
-      margin:0px 0px 0px 650px;
-      font-size: 50px;
-      padding-top:50px
-    }
-
-    h3{
-      font-size:40px;
-      margin:0px 0px 0px 0px;
-    }
-
-.container{
-  display: flex;
-  flex-wrap: wrap;
-  size:70%;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-
-
-}
-
-.item{
-  width:1200px;
-  background:#5f9ea0;
-  color:#fff;
-box-shadow: 4px 4px;
-  margin:10px 100px 30px 100px;
-  padding:10px 40px 10px 10px;
-}
-p{
-  font-size:25px;
-  margin-top:2px;
-  margin-bottom:0px;
-}
-/*投稿一覧終わり*/
-
-.wrap {
-    height: 912px;
-    width: 1368px;
-    position: absolute;
-    transform-origin: 0% 0%;
-}

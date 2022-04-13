@@ -1,32 +1,24 @@
 {% extends "blog/base.html" %}
-{% block head %}
-<title>投稿詳細｜福島大学プログラミングサークル</title>
-{% endblock %}
 {% block content %}
-    <p-pd style="margin-left: 350px; margin-top: 10px; font-size: 20pt;"><a href = "{% url 'postsList' %}">投稿一覧へ</a></p-pd>
-    <div class="box-pd" style="margin-top: 10px; margin-bottom: 10px;">
-        <h2 style="margin-left: 260px; font-size: 30pt;">{{post.title}}</h2>
-        <p style="margin-left: 80px; font-size: 15pt;">投稿者名 :{{post.author}}</p>
-        <p style="margin-left: 330px; font-size: 15pt;">投稿日時 :{{post.created_date}}</p>
-        <p style="margin-left: 330px; font-size: 15pt;">最終編集日時 :{{post.published_date}}</p>
-        <div class="box-pd2" style="margin-top: 10px; font-size: 20pt;">
-            {{post.text | linebreaksbr}}
-
-        </div>
-
-        <div style="margin-top: 20px; margin-bottom: 20px; font-size: 15pt;">
-            {% with prev=post.get_previous_by_pk %}
-                {% if prev %}
-                    <span style="margin-left: 60px;"><a href="{% url 'postsDetail' prev.pk %}">←前の投稿へ</a></span>
-                {% endif %}
-            {% endwith %}
-            {% with next=post.get_next_by_pk %}
-                {% if next %}
-                    <span style="margin-left: 320px;"><a href="{% url 'postsDetail' next.pk %}">次の投稿へ→</a></span>
-                {% endif %}
-            {% endwith %}
-        </div>
-
-    </div>
-
+投稿詳細
+<h3>{{post.title}}</h3>
+<small>投稿日時 : {{post.created_date}}</small><br>
+<small>最終更新 : {{post.published_date}}</small><br>
+<p>{{post.text | linebreaksbr}}</p><br>
+<p>{{post.author}}</p><br>
+<p>{{post.created_date}}</p><br>
+<p>{{post.published_date}}</p><br>
+<!--前後の記事へのリンク-->
+ {% with prev=post.get_previous_by_pk %}
+    {% if prev %}
+      <a href="{% url 'postsDetail' prev.pk %}">前の記事</a>
+    {% endif %}
+  {% endwith %}
+  {% with next=post.get_next_by_pk %}
+    {% if next %}
+      <a href="{% url 'postsDetail' next.pk %}">次の記事</a><br>
+    {% endif %}
+<!--投稿詳細-->
+  {% endwith %}
+<a href = "{% url 'postsList' %}">投稿詳細へ</a>
 {% endblock %}
