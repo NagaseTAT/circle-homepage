@@ -1,12 +1,14 @@
 <!doctype HTML>
 {% load static %}
 <html>
-
+<div class="wrap">
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
     {% block head %}
     {% endblock %}
 </head>
@@ -49,8 +51,9 @@
 
     <footer>
         <img src="https://cdn.discordapp.com/attachments/903580846747971594/903581867670917140/2.png" alt="fukushimadaigaku puroguraming sa-kuru" class="example1">
-        <a href="https://www.fukushima-u.ac.jp/">福島大学</a>
+        <a href="https://www.fukushima-u.ac.jp/"><font color="white">福島大学</font></a>
     </footer>
 </body>
 
+</div>
 </html>
